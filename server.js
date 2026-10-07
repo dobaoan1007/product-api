@@ -79,6 +79,11 @@ app.get("/", (req, res) => {
     res.send("Product API is running");
 });
 
+// Trang health check
+app.get("/health", (req, res) => {
+    res.status(200).send("OK");
+});
+
 // Kết nối MongoDB
 mongoose
     .connect(process.env.MONGO_URI)

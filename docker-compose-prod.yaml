@@ -11,7 +11,7 @@ services:
       retries: 5
 
   product-api:
-    build: .
+    image: baoan100725/product-api:latest
     container_name: product-api-prod
     ports:
       - "3001:3000"
@@ -21,8 +21,3 @@ services:
     depends_on:
       mongodb:
         condition: service_healthy
-    healthcheck:
-      test: ["CMD", "node", "-e", "const http=require('http');const req=http.get('http://127.0.0.1:3000/health',res=>{process.exit(res.statusCode===200?0:1)});req.on('error',()=>process.exit(1));"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
