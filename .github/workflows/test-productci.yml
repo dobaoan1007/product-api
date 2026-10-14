@@ -26,3 +26,5 @@ jobs:
 
       - name: Check project
         run: node --check server.js
+      - name: Check API
+        run: node server.js &
