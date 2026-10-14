@@ -24,7 +24,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check project
+      - name: Check projectttttttttt
         run: node --check server.js
-      - name: Check API
-        run: node server.js &
+      
